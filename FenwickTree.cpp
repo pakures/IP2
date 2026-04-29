@@ -209,7 +209,18 @@ namespace ip2
 
     bool FenwickTree::operator<(const FenwickTree& other) const
     {
-        return prefixSum(pImpl->size) < other.prefixSum(other.pImpl->size);
+        if (pImpl->size != other.pImpl->size)
+            return pImpl->size < other.pImpl->size;
+
+        for (int i = 1; i <= pImpl->size; i++)
+        {
+            if (pImpl->values[i] < other.pImpl->values[i])
+                return true;
+            if (pImpl->values[i] > other.pImpl->values[i])
+                return false;
+        }
+
+        return false; // visi elementai lygus
     }
 
     bool FenwickTree::operator<=(const FenwickTree& other) const
