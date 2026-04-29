@@ -1,0 +1,11 @@
+PASS initial value
+PASS add test
+PASS set test
+PASS prefix sum
+PASS range sum
+PASS remove
+PASS operator +=
+PASS operator *=
+PASS copy + ==
+PASS clear operator !
+PASS exception test
